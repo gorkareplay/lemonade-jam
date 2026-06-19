@@ -107,7 +107,7 @@ func _on_level_1_complete():
 	
 	await aptyp("okay next puzzle", 0.05, 0.5)
 	await aptyp("this is a game of battleships, I hope you know the rules", 0.05, 1.0)
-	await aptyp("you are trying to guess the positions of my ships and vise-versa", 0.05, 1.0)
+	await aptyp("you are trying to guess the positions of my ships and vice versa", 0.05, 1.0)
 	await aptyp("you can just click to shoot my ships", 0.05, 1.0)
 	await aptyp("you NEED to follow the TURN ORDER", 0.05, 1.0)
 	level_2.position = Vector2(415, 70)
@@ -123,7 +123,7 @@ func _on_level_2_complete():
 	level_2.queue_free()
 	stop_and_save()
 	await aptyp("dude", 0.01, 0.7)
-	await aptyp("okay you certanly cheated there", 0.05, 1.0)
+	await aptyp("okay you certainly cheated there", 0.05, 1.0)
 	await aptyp("fine take the ingredient i don't care", 0.05, 2.0)
 	
 	var tween = create_tween()
