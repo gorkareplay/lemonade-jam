@@ -93,6 +93,8 @@ func _on_play_pressed():
 
 func _on_level_1_complete():
 	level_1.queue_free()
+	music_player.stop()
+	
 	await aptyp("how the hell did you do that", 0.05, 1.0)
 	await aptyp("doesn't matter, here is one of the ingredients", 0.05)
 	
@@ -100,7 +102,7 @@ func _on_level_1_complete():
 	tween.tween_property(mint, "position", Vector2(1792.0, 952.0), 4.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(5.0).timeout
 	
-	music_player.play(saved_positon)
+	music_player.play()
 	
 	await aptyp("okay next puzzle", 0.05, 0.5)
 	await aptyp("this is a game of battleships, I hope you know the rules", 0.05, 1.0)
@@ -118,6 +120,7 @@ func _on_second_ship_down():
 	
 func _on_level_2_complete():
 	level_2.queue_free()
+	music_player.stop()
 	await aptyp("dude", 0.01, 0.7)
 	await aptyp("okay you certainly cheated there", 0.05, 1.0)
 	await aptyp("fine take the ingredient i don't care", 0.05, 2.0)
@@ -126,7 +129,7 @@ func _on_level_2_complete():
 	tween.tween_property(water, "position", Vector2(1664.0, 952.0), 3.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(4.0).timeout
 	
-	music_player.play(saved_positon)
+	music_player.play()
 	
 	await aptyp("let's go next puzzle", 0.05, 1.0)
 	await aptyp("so this is an impossible labyrinth i made that you need to complete", 0.05, 3.0)
@@ -138,6 +141,7 @@ func _on_level_2_complete():
 func _on_level_3_complete():
 	print("complete")
 	level_3.queue_free()
+	music_player.stop()
 	await aptyp("BRUH HOW ARE YOU DOING THIS STOP IT ALREADY!!!", 0.01, 1.0)
 	await aptyp("good job, i guess", 0.1, 2.0)
 	await aptyp("there you go", 0.075, 1.0)
@@ -146,7 +150,7 @@ func _on_level_3_complete():
 	tween.tween_property(sugar, "position", Vector2(1536.0, 952.0), 4.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(5.0).timeout
 	
-	music_player.play(saved_positon)
+	music_player.play()
 	await aptyp("and so, the final puzzle awaits", 0.05, 2.0)
 	await aptyp("are you ready?", 0.2, 1.0)
 	add_child(level_4)
@@ -157,6 +161,7 @@ func _on_level_3_complete():
 	
 func _on_level_4_complete():
 	level_4.queue_free()
+	music_player.stop()
 	aptyp("NOOOOOOOOOOOOOOOOOO", 0.075, 2.0)
 	
 	ingredients.visible = true
@@ -167,7 +172,6 @@ func _on_level_4_complete():
 	
 	aptyp("")
 	
-	music_player.stop()
 	music_player.stream = ragtime
 	music_player.play()
 	
