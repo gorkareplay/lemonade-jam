@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 	if credits_active:
 		time += delta
 		credits.rotation = sin(time * 2.0) * 0.01
+		lemonade.rotation = sin(time * 2.0) * 0.01
 	
 func aptyp(line: String, delay: float = 0.1, timeA: float = 1.0) -> void:
 	label.visible_characters = 0
@@ -197,4 +198,5 @@ func _on_level_4_complete():
 	lemonade.visible = true
 	add_child(credits)
 	credits.pivot_offset = Vector2(credits.size.x / 2, credits.size.y / 2)
+	lemonade.pivot_offset = Vector2(lemonade.size.x /2, credits.size.y /2)
 	credits_active = true
